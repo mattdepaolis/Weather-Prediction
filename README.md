@@ -58,11 +58,11 @@ start = end - timedelta(days=30)
 data = Daily(zurich, start, end)
 data = data.fetch()
 data = data.dropna(subset=['tmax'])
-last_32_days = data['tmax'].values[-30:]
+last_30_days = data['tmax'].values[-30:]
 input_sequence = torch.tensor(last_30_days, dtype=torch.float32).cuda()
 ```
 
-- Fetches daily weather data, cleans it by dropping NaN values, and converts the last 32 days of temperature data to a PyTorch tensor.
+- Fetches daily weather data, cleans it by dropping NaN values, and converts the last 30 days of temperature data to a PyTorch tensor.
 
 #### Define Prediction Function
 ```python
