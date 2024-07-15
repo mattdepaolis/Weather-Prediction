@@ -6,7 +6,7 @@ This repository contains a script for predicting the next 7 days of maximum temp
 
 The main script performs the following tasks:
 
-1. **Fetch Historical Weather Data**: Uses the `meteostat` library to get the last 30 days of maximum temperature data for Zurich.
+1. **Fetch Historical Weather Data**: Uses the `meteostat` library to get the last 30 days of maximum and minimum temperature data for Zurich.
 2. **Process Data**: Cleans the data, handles NaN values, and converts it to a format suitable for model input.
 3. **Model Prediction**: Utilizes a trained transformer model to predict the maximum temperatures for the next 7 days.
 4. **Output**: Prints the actual temperatures for the last 7 days and the predicted temperatures for the next 7 days.
