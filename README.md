@@ -57,8 +57,10 @@ start = end - timedelta(days=30)
 ```python
 data = Daily(zurich, start, end)
 data = data.fetch()
-data = data.dropna(subset=['tmax'])
-last_30_days = data['tmax'].values[-30:]
+data = data.dropna(subset=['tmax', 'tmin'])
+last_30_days_tmax = data['tmax'].values[-30:]
+last_30_days_tmin = data['tmin'].values[-30:]
+last_30_days = np.stack((last_30_days_tmax, last_30_days_tmin), axis=1)
 input_sequence = torch.tensor(last_30_days, dtype=torch.float32).cuda()
 ```
 
